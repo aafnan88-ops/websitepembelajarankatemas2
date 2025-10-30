@@ -290,11 +290,14 @@
         function login(role) {
             if (role === 'admin') {
                 // Simulasi login admin
-                const password = prompt("Masukkan kata sandi Admin:");
-                if (password !== 'admin123') { // Kata sandi contoh
-                    alert("Kata sandi salah!");
-                    return;
-                }
+                // const password = prompt("Masukkan kata sandi Admin:"); // <-- INI PENYEBAB MASALAH
+                // if (password !== 'admin123') { // Kata sandi contoh
+                //     alert("Kata sandi salah!"); // <-- INI JUGA PENYEBAB MASALAH
+                //     return;
+                // }
+                
+                // DIHAPUS: prompt() dan alert() diblokir di lingkungan ini.
+                // Untuk demo, kita langsung masuk sebagai admin.
                 currentUserRole = 'admin';
                 welcomeMessage.textContent = 'Selamat Datang, Admin!';
             } else if (role === 'siswa') {
